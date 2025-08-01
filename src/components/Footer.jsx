@@ -29,9 +29,9 @@ const Footer = () => (
         <h3 className="text-lg font-semibold mb-4 text-gray-800">Quick Links</h3>
         <ul className="space-y-2 text-sm">
           <li><a href="/" className="hover:text-primary transition">Home</a></li>
-          <li><a href="/categories" className="hover:text-primary transition">Categories</a></li>
-          <li><a href="/about" className="hover:text-primary transition">About Us</a></li>
-          <li><a href="/contact" className="hover:text-primary transition">Contact</a></li>
+           <li><a href="/about" className="hover:text-primary transition">About Us</a></li>
+          <li><a href="/shop" className="hover:text-primary transition">Shop</a></li>
+          <li><a href="/gadget" className="hover:text-primary transition">Gadget</a></li>
         </ul>
       </div>
 
@@ -66,10 +66,10 @@ const Footer = () => (
       <div>
         <h3 className="text-lg font-semibold mb-4 text-gray-800">Follow Us</h3>
         <div className="flex space-x-4">
-          <a href="https://facebook.com/nittosodai" target="_blank" rel="noreferrer" className="text-gray-500 hover:text-blue-600 transition">
+          <a href="https://facebook.com/nittosodai.coms" target="_blank" rel="noreferrer" className="text-gray-500 hover:text-blue-600 transition">
             <FaFacebookF size={20} />
           </a>
-          <a href="https://www.instagram.com/reel/DLnFfgmqo86/?igsh=ODJ2Y3N2ZGdwemto" target="_blank" rel="noreferrer" className="text-gray-500 hover:text-pink-500 transition">
+          <a href="https://www.instagram.com/matiursabirin/profilecard/?igsh=dTd3d21sdnYweWR3" target="_blank" rel="noreferrer" className="text-gray-500 hover:text-pink-500 transition">
             <FaInstagram size={20} />
           </a>
           <a href="https://youtube.com" target="_blank" rel="noreferrer" className="text-gray-500 hover:text-red-600 transition">

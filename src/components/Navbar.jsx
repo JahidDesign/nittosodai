@@ -23,6 +23,7 @@ const Navbar = () => {
       language: 'Language',
       searchPlaceholder: 'Search in nittosodai',
       home: 'Home',
+      about: 'About Us',
       shop: 'Shop',
       food: 'Food',
       gadget: 'Gadget',
@@ -38,6 +39,7 @@ const Navbar = () => {
       language: 'ভাষা',
       searchPlaceholder: 'নিত্তসদাইয়ে খুঁজুন',
       home: 'হোম',
+      about: 'আমাদের সম্পর্কে',
       shop: 'দোকান',
       food: 'ফুড',
       gadget: 'গ্যাজেট',
@@ -116,6 +118,7 @@ const Navbar = () => {
           {/* Nav Links (Desktop) */}
           <div className="hidden md:flex items-center gap-6 text-sm font-medium">
             <Link to="/" className="hover:text-green-600">{current.home}</Link>
+            <Link to="/about" className="hover:text-green-600">{current.about}</Link>
             <Link to="/shop" className="hover:text-green-600">{current.shop}</Link>
             <Link to="/food" className="hover:text-green-600">{current.food}</Link>
             <Link to="/gadget" className="hover:text-green-600">{current.gadget}</Link>
@@ -158,6 +161,7 @@ const Navbar = () => {
         {menuOpen && (
           <div className="md:hidden px-4 py-3 bg-white border-t space-y-2 text-sm">
             <Link to="/" onClick={() => setMenuOpen(false)} className="block hover:underline">{current.home}</Link>
+            <Link to="/about" onClick={() => setMenuOpen(false)} className="block hover:underline">{current.about}</Link>
             <Link to="/shop" onClick={() => setMenuOpen(false)} className="block hover:underline">{current.shop}</Link>
             <Link to="/food" onClick={() => setMenuOpen(false)} className="block hover:underline">{current.food}</Link>
             <Link to="/gadget" onClick={() => setMenuOpen(false)} className="block hover:underline">{current.gadget}</Link>
@@ -181,7 +185,7 @@ const Navbar = () => {
               </Link>
             )}
 
-            <div className="pt-2 border-t">
+            {/* <div className="pt-2 border-t">
               <span>{current.callNow} <strong className="text-green-600">+880 1712-906942</strong></span>
               <select
                 value={language}
@@ -191,7 +195,7 @@ const Navbar = () => {
                 <option value="en">English</option>
                 <option value="bn">বাংলা</option>
               </select>
-            </div>
+            </div> */}
           </div>
         )}
       </nav>

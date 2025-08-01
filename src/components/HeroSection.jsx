@@ -6,7 +6,7 @@ const slidesData = {
   en: [
     {
       id: 1,
-      title: 'NittoSodai | Smart Grocery Shopping, Made Easy',
+      title: 'NittoSodai with Sabirin | Smart Grocery Shopping, Made Easy',
       subtitle: 'From daily essentials to monthly stocks — order fast, fresh & affordably from home.',
       image: 'https://i.ibb.co/ymtkWYhV/package-02.png',
       button: {
@@ -41,7 +41,7 @@ const slidesData = {
   bn: [
     {
       id: 1,
-      title: 'নিত্যসদাই | ঘরে বসেই স্মার্ট বাজার',
+      title: 'নিত্যসদাই উইথ সাবিরিন | ঘরে বসেই স্মার্ট বাজার',
       subtitle: 'প্রতিদিনের প্রয়োজন হোক বা মাসিক বাজার — পান দ্রুত, টাটকা ও সাশ্রয়ী মূল্যে।',
       image: 'https://i.ibb.co/ymtkWYhV/package-02.png',
       button: {
