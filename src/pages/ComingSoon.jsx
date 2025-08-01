@@ -67,9 +67,9 @@ const ComingSoon = () => {
             </button>
 
             <div className="flex justify-center md:justify-start gap-5 mt-6 text-gray-700">
-              <a href="https://www.Facebook.com/nittosodai" className="hover:text-indigo-600 transition"><FaFacebookF size={20} /></a>
+              <a href="https://facebook.com/nittosodai.coms" className="hover:text-indigo-600 transition"><FaFacebookF size={20} /></a>
               <a href="#" className="hover:text-indigo-600 transition"><FaTwitter size={20} /></a>
-              <a href="https://www.instagram.com/reel/DLnFfgmqo86/?igsh=ODJ2Y3N2ZGdwemto" className="hover:text-indigo-600 transition"><FaInstagram size={20} /></a>
+              <a href="https://www.instagram.com/matiursabirin/profilecard/?igsh=dTd3d21sdnYweWR3" className="hover:text-indigo-600 transition"><FaInstagram size={20} /></a>
             </div>
           </div>
 
