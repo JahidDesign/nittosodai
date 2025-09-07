@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiSearch, FiMenu, FiX, FiLogOut } from 'react-icons/fi';
-import { FaUserCircle, FaWhatsapp } from 'react-icons/fa';
+import { FaWhatsapp } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
 import LanguageContext from '../context/LanguageContext';
 import { AuthContext } from '../context/AuthContext';
 
@@ -156,49 +157,74 @@ const Navbar = () => {
             {menuOpen ? <FiX /> : <FiMenu />}
           </button>
         </div>
-
-        {/* Mobile Menu */}
-        {menuOpen && (
-          <div className="md:hidden px-4 py-3 bg-white border-t space-y-2 text-sm">
-            <Link to="/" onClick={() => setMenuOpen(false)} className="block hover:underline">{current.home}</Link>
-            <Link to="/about" onClick={() => setMenuOpen(false)} className="block hover:underline">{current.about}</Link>
-            <Link to="/shop" onClick={() => setMenuOpen(false)} className="block hover:underline">{current.shop}</Link>
-            <Link to="/food" onClick={() => setMenuOpen(false)} className="block hover:underline">{current.food}</Link>
-            <Link to="/gadget" onClick={() => setMenuOpen(false)} className="block hover:underline">{current.gadget}</Link>
-
-            {user ? (
-              <>
-                <Link to="/profile" onClick={() => setMenuOpen(false)} className="block hover:underline">{current.profile}</Link>
-                <button
-                  onClick={() => {
-                    logout();
-                    setMenuOpen(false);
-                  }}
-                  className="block w-full text-left hover:underline"
-                >
-                  {current.logout}
-                </button>
-              </>
-            ) : (
-              <Link to="/login" onClick={() => setMenuOpen(false)} className="block hover:underline">
-                {current.login}
-              </Link>
-            )}
-
-            {/* <div className="pt-2 border-t">
-              <span>{current.callNow} <strong className="text-green-600">+880 1712-906942</strong></span>
-              <select
-                value={language}
-                onChange={(e) => setLanguage(e.target.value)}
-                className="mt-2 border rounded px-2 py-1"
-              >
-                <option value="en">English</option>
-                <option value="bn">বাংলা</option>
-              </select>
-            </div> */}
-          </div>
-        )}
       </nav>
+
+      {/* Mobile Drawer */}
+      <AnimatePresence>
+        {menuOpen && (
+          <>
+            {/* Overlay */}
+            <motion.div
+              className="fixed inset-0 bg-black/50 z-40"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setMenuOpen(false)}
+            />
+
+            {/* Drawer */}
+            <motion.div
+              className="fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 p-6 flex flex-col gap-4"
+              initial={{ x: -300 }}
+              animate={{ x: 0 }}
+              exit={{ x: -300 }}
+              transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+            >
+              <div className="flex justify-between items-center mb-6">
+                <h2 className="text-lg font-bold">Menu</h2>
+                <FiX className="text-2xl cursor-pointer" onClick={() => setMenuOpen(false)} />
+              </div>
+
+              <Link to="/" onClick={() => setMenuOpen(false)} className="hover:underline">{current.home}</Link>
+              <Link to="/about" onClick={() => setMenuOpen(false)} className="hover:underline">{current.about}</Link>
+              <Link to="/shop" onClick={() => setMenuOpen(false)} className="hover:underline">{current.shop}</Link>
+              <Link to="/food" onClick={() => setMenuOpen(false)} className="hover:underline">{current.food}</Link>
+              <Link to="/gadget" onClick={() => setMenuOpen(false)} className="hover:underline">{current.gadget}</Link>
+
+              {user ? (
+                <>
+                  <Link to="/profile" onClick={() => setMenuOpen(false)} className="hover:underline">{current.profile}</Link>
+                  <button
+                    onClick={() => {
+                      logout();
+                      setMenuOpen(false);
+                    }}
+                    className="text-left hover:underline flex items-center gap-2"
+                  >
+                    <FiLogOut /> {current.logout}
+                  </button>
+                </>
+              ) : (
+                <Link to="/login" onClick={() => setMenuOpen(false)} className="hover:underline">
+                  {current.login}
+                </Link>
+              )}
+
+              <div className="pt-4 border-t mt-4">
+                <span className="block mb-2">{current.callNow} <strong className="text-green-600">+880 1712-906942</strong></span>
+                <select
+                  value={language}
+                  onChange={(e) => setLanguage(e.target.value)}
+                  className="mt-2 border rounded px-2 py-1 w-full"
+                >
+                  <option value="en">English</option>
+                  <option value="bn">বাংলা</option>
+                </select>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 };
