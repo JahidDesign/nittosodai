@@ -72,7 +72,7 @@ const Footer = () => (
           <a href="https://www.instagram.com/matiursabirin/profilecard/?igsh=dTd3d21sdnYweWR3" target="_blank" rel="noreferrer" className="text-gray-500 hover:text-pink-500 transition">
             <FaInstagram size={20} />
           </a>
-          <a href="https://youtube.com" target="_blank" rel="noreferrer" className="text-gray-500 hover:text-red-600 transition">
+          <a href="https://youtube.com/@nittosodai-sabirin?si=uNWc0Od39sPAsWyx" target="_blank" rel="noreferrer" className="text-gray-500 hover:text-red-600 transition">
             <FaYoutube size={20} />
           </a>
         </div>
